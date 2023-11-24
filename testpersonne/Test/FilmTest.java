@@ -1,5 +1,3 @@
-package activeRecord;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -185,8 +183,7 @@ public class FilmTest {
      * @throws SQLException
      * @throws RealisateurAbsentException
      */
-    public void testNouveauRealInconnu() throws SQLException,
-            RealisateurAbsentException {
+    public void testNouveauRealInconnu() {
         Personne p = new Personne("Zemeckis", "Robert");
         assertThrows(RealisateurAbsentException.class, () -> {
                     new Film("Retour vers le futur", p).save();

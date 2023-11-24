@@ -59,7 +59,7 @@ public class Film {
         Connection connect = dbco.getConnection();
         String createString = "CREATE TABLE Film ( " + "ID INTEGER  AUTO_INCREMENT, "
                 + "TITRE varchar(40) NOT NULL, " + "ID_REA INTEGER(11) NOT NULL, " + "PRIMARY KEY (ID),"
-                + " FOREIGN KEY (ID_REA) REFERENCES Personne(ID))";
+                + "FOREIGN KEY (ID_REA) REFERENCES Personne(ID))";
         Statement stmt = connect.createStatement();
         stmt.executeUpdate(createString);
         System.out.println("Creation table Film\n");
