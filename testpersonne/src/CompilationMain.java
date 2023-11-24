@@ -5,10 +5,13 @@ import java.util.ArrayList;
 /**
  * cette classe a juste pour objectif de verifier les noms des methodes
  */
-/*
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 public class CompilationMain {
 
-	public static void main(String[] args) throws SQLException, RealisateurAbsentException {
+	public static void main(String[] args) throws SQLException, RealisateurAbsentException, SQLException {
 		///////////////// test personne 
 		
 		
@@ -118,4 +121,3 @@ public class CompilationMain {
 	}
 	
 }
-*/
