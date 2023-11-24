@@ -21,15 +21,30 @@ public class DBConnection {
         String urlDB = "jdbc:mysql://" + serverName + ":";
         urlDB += portNumber + "/" + dbName;
         this.connect = DriverManager.getConnection(urlDB, connectionProps);
+        this.ancientNom=null;
+    }
+    public DBConnection(String nom) throws SQLException {
+        this.dbName=nom;
+        Properties connectionProps = new Properties();
+        connectionProps.put("user", userName);
+        connectionProps.put("password", password);
+        String urlDB = "jdbc:mysql://" + serverName + ":";
+        urlDB += portNumber + "/" + dbName;
+        this.connect = DriverManager.getConnection(urlDB, connectionProps);
+        this.ancientNom=null;
     }
     public Connection getConnection() throws SQLException {
-        if (instance == null || !this.ancientNom.equals(this.dbName)){
+        if (instance == null){
             instance = new DBConnection();
         }
-        return this.connect;
+        if (this.ancientNom != null && !this.ancientNom.equals(this.dbName)){
+            instance=new DBConnection(dbName);
+        }
+        return instance.connect;
     }
     public void setNomDB(String nomDB){
         this.ancientNom=this.dbName;
         this.dbName=nomDB;
     }
+
 }

@@ -11,6 +11,7 @@ public class PrincipaleJDBC {
 	public static void main(String[] args) throws SQLException {
 		DBConnection dbconnect = new DBConnection();
 
+		//dbconnect.setNomDB("testNom");
 		Connection connect = dbconnect.getConnection();
 
 		// creation de la table Personne
