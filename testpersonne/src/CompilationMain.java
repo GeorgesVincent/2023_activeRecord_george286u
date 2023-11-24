@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class CompilationMain {
 
-	public static void main(String[] args) throws SQLException, RealisateurAbsentException, SQLException {
+	public static void main(String[] args) throws RealisateurAbsentException, SQLException {
 		///////////////// test personne 
 		
 		
